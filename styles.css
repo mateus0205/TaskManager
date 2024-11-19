@@ -1,0 +1,197 @@
+:root {
+    --primary-color: #4CAF50; /* Verde suave */
+    --primary-hover: #45a049; /* Verde escuro para hover */
+    --secondary-color: #f9c74f; /* Amarelo claro */
+    --danger-color: #ff3860; /* Vermelho para botões de remover */
+    --danger-hover: #ff2b4c; /* Vermelho escuro para hover */
+    --background-light: #f4f4f4; /* Fundo claro */
+    --background-dark: #eb1f1f; /* Fundo escuro */
+    --background-default: #fff; /* Fundo padrão */
+    --text-light: #ecf0f1; /* Texto claro */
+    --text-dark: #1f76ce; /* Texto escuro */
+    --border-color: #ddd; /* Cor da borda */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-light);
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Ocupa toda a altura da tela */
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: var(--background-default);
+    padding: 20px;
+    border-radius: 15px; /* Bordas mais arredondadas */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    color: var(--text-dark);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.input-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+#taskInput {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 25px; /* Bordas arredondadas */
+    margin-right: 10px;
+    transition: border 0.4s ease-in-out; /* Transição suave para borda */
+}
+
+#taskInput:focus {
+    border-color: var(--primary-color); /* Cor da borda ao focar */
+}
+
+#addTaskBtn {
+    padding: 10px 15px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 25px; /* Bordas arredondadas */
+    cursor: pointer;
+    transition: background-color 0.4s ease-in-out, transform 0.4s ease-in-out; /* Transição suave */
+}
+
+#addTaskBtn:hover {
+    background-color: var(--primary-hover);
+    transform: scale(1.15); /* Aumenta um pouco ao passar o mouse */
+}
+.filter-container {
+    margin-bottom: 20px;
+    text-align: center;
+    display: flex; /* Alinha os botões em linha */
+    justify-content: center; /* Centraliza os botões no contêiner */
+}
+
+.filter-container button {
+    margin: 0 5px; /* Espaçamento horizontal entre os botões */
+    padding: 10px 15px;
+    border: none;
+    border-radius: 25px; /* Bordas arredondadas */
+    cursor: pointer;
+    transition: background-color 0.4s ease-in-out, transform 0.4s ease-in-out; /* Transição suave */
+    background-color: #f0f0f0; /* Cor de fundo padrão para os botões */
+    color: #333; /* Cor do texto */
+}
+
+.filter-container button:hover {
+    background-color: #e2e2e2; /* Cor de fundo ao passar o mouse */
+    transform: scale(1.15); /* Aumenta um pouco ao passar o mouse */
+}
+
+.task-list {
+    margin-top: 10px;
+}
+
+.task-item {
+    background-color: #f8f9fa;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid var(--border-color);
+    border-radius: 15px; /* Bordas mais arredondadas */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.4s ease-in-out, transform 0.4s ease-in-out; /* Transição suave */
+}
+
+.task-item:hover {
+    background-color: #f1f1f1; /* Leve mudança de fundo ao passar o mouse */
+    transform: scale(1.01); /* Aumenta um pouco ao passar o mouse */
+}
+
+.completed {
+    text-decoration: line-through;
+    color: rgb(90, 245, 0);
+}
+
+.remove-task-btn {
+    background-color: var(--danger-color);
+    color: white;
+    border: none;
+    border-radius: 25px; /* Bordas arredondadas */
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.4s ease-in-out, transform 0.4s ease-in-out; /* Transição suave */
+}
+
+.remove-task-btn:hover {
+    background-color: var(--danger-hover);
+    transform: scale(1.35); /* Aumenta um pouco ao passar o mouse */
+}
+
+.theme-container {
+    margin: 20px 0; /* Espaçamento acima e abaixo do contêiner */
+    text-align: center; /* Centraliza o texto dentro da div */
+}
+
+select {
+    margin-left: 10px; /* Espaçamento entre o label e o select */
+}
+
+/* Temas */
+body.default {
+    background-color: var(--background-default);
+    color: var(--text-dark);
+}
+
+body.dark {
+    background-color: var(--background-dark);
+    color: var(--text-light);
+}
+
+body.light {
+    background-color: #f0f0f0; /* Fundo claro */
+    color: var(--text-dark);
+}
+
+/* Estilos responsivos */
+@media (max-width: 600px) {
+    .input-container {
+        flex-direction: column; /* Empilha os elementos verticalmente */
+    }
+
+    #taskInput {
+        margin-right: 0; /* Remove margem direita */
+        margin-bottom: 10px; /* Adiciona margem inferior */
+    }
+
+    .filter-container {
+        flex-direction: column; /* Empilha os botões verticalmente */
+    }
+
+    .filter-container button {
+        margin-bottom: 5px; /* Adiciona espaçamento inferior */
+    }
+}
+/* Estilo do botão "Concluir" na tarefa */
+.concluir-task-btn {
+    background-color: #28a745; /* Cor de fundo verde */
+    color: white; /* Cor do texto */
+    border: none; /* Remove a borda padrão */
+    border-radius: 25px; /* Bordas arredondadas */
+    padding: 5px 10px; /* Espaçamento interno */
+    cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transições suaves */
+}
+
+.concluir-task-btn:hover {
+    background-color: #218838; /* Cor de fundo ao passar o mouse */
+    transform: scale(1.15); /* Aumenta ligeiramente ao passar o mouse */
+}

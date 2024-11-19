@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador de Tarefas</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css"> <!-- Verifique o caminho -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Gerenciador de Tarefas</h1>
+        <div class="input-container"> 
+            <input type="text" id="taskInput" placeholder="Digite o título da tarefa" required>
+            <button id="addTaskBtn" class="btn btn-primary">Adicionar Tarefa</button>
+        </div>
+        
+        <div class="filter-container my-3">
+            <button id="showAllBtn" class="btn btn-secondary">Mostrar Todas</button>
+            <button id="showCompletedBtn" class="btn btn-success">Mostrar Concluídas</button>
+            <button id="showPendingBtn" class="btn btn-warning">Mostrar Pendentes</button>
+            <button id="clearTasksBtn" class="btn btn-danger">Limpar Todas</button>
+        </div>
+        
+        <h2>Tarefas:</h2>
+        <div id="taskList" class="task-list list-group"></div> <!-- Contêiner para as tarefas -->
+    </div>
+
+    <div class="theme-container">
+        <label for="themeSelector">Escolha um tema:</label>
+        <select id="themeSelector">
+            <option value="default">Padrão</option>
+            <option value="dark">Escuro</option>
+            <option value="light">Claro</option>
+        </select>
+    </div>
+    
+    <script src="src/renderer.js"></script> <!-- Verifique o caminho -->
+</body>
+</html>

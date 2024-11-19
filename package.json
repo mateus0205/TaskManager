@@ -1,0 +1,23 @@
+{
+    "name": "task-manager-cli",
+    "version": "1.0.0",
+    "main": "src/main.js",
+    "scripts": {
+        "start": "electron .", 
+        "build": "tsc"
+    },
+    "dependencies": {
+        "chalk": "^4.1.2",
+        "inquirer": "^8.2.6"
+    },
+    "devDependencies": {
+        "@types/inquirer": "^9.0.7",
+        "@types/node": "^22.7.5",
+        "electron": "^32.2.2",
+        "typescript": "^4.0.0"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "description": ""
+}
